@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surprised Emoji Fix</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f8ff;
+            margin: 0;
+        }
+
+        /* Emoji Container */
+        .emoji {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background-color: #ffeb3b;
+            border-radius: 50%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Scaling the emoji on hover */
+        .emoji:hover {
+            transform: scale(1.1);
+        }
+
+        /* Eyes */
+        .eye {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background-color: black;
+            border-radius: 50%;
+        }
+        .eye.left {
+            top: 60px;
+            left: 50px;
+        }
+        .eye.right {
+            top: 60px;
+            right: 50px;
+        }
+
+        /* Mouth */
+        .mouth {
+            position: absolute;
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%) scale(1); /* Centered by default */
+            width: 20px; /* Small closed mouth */
+            height: 20px;
+            background-color: black;
+            border-radius: 50%;
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Mouth changes on hover */
+        .emoji:hover .mouth {
+            width: 40px; /* Open mouth size */
+            height: 40px;
+            background-color: white;
+            border: 5px solid black;
+            transform: translateX(-50%) scale(1); /* Maintain position and scaling */
+        }
+
+        /* Blush */
+        .blush {
+            position: absolute;
+            width: 30px;
+            height: 20px;
+            background-color: pink;
+            border-radius: 50%;
+            opacity: 0.7;
+        }
+        .blush.left {
+            top: 110px;
+            left: 30px;
+        }
+        .blush.right {
+            top: 110px;
+            right: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="emoji">
+        <div class="eye left"></div>
+        <div class="eye right"></div>
+        <div class="blush left"></div>
+        <div class="blush right"></div>
+        <div class="mouth"></div>
+    </div>
+</body>
+</html>
